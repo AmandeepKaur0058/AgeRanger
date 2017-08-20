@@ -1,0 +1,47 @@
+﻿@model AgeGroupViewModel
+@{
+    ViewBag.Title = "Create";
+}
+<div id="page">
+    <div id="h2" class="col-lg-8 col-md-offset-2">
+        <h2>@ViewBag.Heading</h2>
+    </div>
+
+
+    @using (Html.BeginForm(Model.Action, "Home",new{@id = Model.Id }))
+    {
+        <div class="col-md-3 col-md-offset-4">
+            <div id="create">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.FirstName)
+
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m=>m.FirstName)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LastName)
+
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m=>m.LastName)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Age)
+
+                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m=>m.Age)
+                </div>
+
+                <div class="btn-lg">
+
+                    <button type="submit" value="save" class="">Save</button>
+
+                </div>
+
+            </div>
+        </div>
+    }
+
+
+</div>

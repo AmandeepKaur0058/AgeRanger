@@ -1,0 +1,73 @@
+﻿@import url('bootstrap.css');
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 580px;
+}
+#Search {
+    width: 500px;
+    padding-top: 40px;
+    -webkit-box-shadow: none;
+    
+}
+
+
+#th {
+    padding: 15px;
+    text-align: center
+}
+
+#row {
+    padding-right: 50px;
+    font-weight: initial
+}
+.customDiv {
+    margin: 5px;
+    padding-top: 10px;
+    min-height: 300px;
+    background-color: silver;
+    font-size: large;
+}
+#tbl {
+    padding-top: 60px;
+    color: brown;
+    
+    
+}
+#h2 {
+    text-align: center;
+    font-weight: bolder;
+    color: brown;
+}
+#body {
+    background-color: whitesmoke;
+    height: 680px
+        
+}
+#page {
+    background-color: mistyrose
+}
+#create{
+    background-color: whitesmoke;
+    mso-foreground: brown;
+}

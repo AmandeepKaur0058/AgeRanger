@@ -1,0 +1,95 @@
+﻿@using AgeRanger.Controllers
+@model AgeGroupViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<div id="page">
+<div id="h2">
+    <h2>Details</h2>
+</div>
+<div id="body">
+    @using (Html.BeginForm("Search", "Home"))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-md-offset-3">
+                    <div id="Search">
+                        <h4>Search</h4>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="input-group" id="Search">
+
+                        @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", @placeholder = "Search By FirstName,LastName and AgeGroup.." })
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+    <div class="container">
+        <div class="row">
+            <div class="form-group">
+                <div class="table-responsive">
+                    <div class="col-md-10 col-md-offset-1">
+
+                        <div id="tbl">
+                            <table class="table table-bordered table-hover table-condensed ">
+                                <thead id="th">
+                                <th>ID</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Age</th>
+                                <th>AgeDescription</th>
+                                <th>Action</th>
+                                </thead>
+                                <tbody>
+                                @foreach (var people in Model.Persons)
+                                {
+
+                                    <tr class="warning">
+                                        <td>
+                                            @people.Id
+                                        </td>
+                                        <td>
+                                            @people.FirstName
+                                        </td>
+                                        <td>
+                                            @people.LastName
+                                        </td>
+                                        <td>
+                                            @people.Age
+                                        </td>
+                                        <td>
+                                            @people.AgeGroup
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Delete", "Delete", new { @id = people.Id })
+                                            <span class="col-lg-3">@Html.ActionLink("Edit", "Edit", new { @id = people.Id })</span> 
+                                        </td>
+                                       
+                                    </tr>
+                                }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-5">
+            <div class="btn">
+                @Html.ActionLink("Create", "Create", "Home",new {@class= "btn-lg" })
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
